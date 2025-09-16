@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Stellar Guesser</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap">
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" type="image/x-icon" href="./files/images/favicon.ico">
+    <script src="adjust_main_card_height.js" defer></script>
+    <script src="adjust_main_title_size.js" defer></script>
+    <script src="highlight_headings.js" defer></script>
+    <script src="stars.js" defer></script>
+</head>
+
+<body>
+    <canvas id="background_canvas"></canvas>
+    <div class="wrap">
+        <header class="glass">
+            <div class="logo">
+                <img src="./files/images/favicon.ico" alt="Stellar Guesser logo">
+                Stellar Guesser
+            </div>
+
+            <nav class="action_buttons_wrapper">
+                <a class="btn btn_primary" id="download_button" href="#download">Download</a>
+                <a class="btn btn_secondary" id="community_button" href="#community">Join our community</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="main_card">
+                <div class="main_card_content">
+                    <h1 class="center_text main_title" id="main_title">Stellar Guesser</h1>
+                    <h2 class="center_text">A game-like way to learn the sky, from beginner to <a
+                            href="https://ioaastrophysics.org/">IOAA</a>
+                        gold medal level</h2>
+                </div>
+                <div class="action_buttons_wrapper">
+                    <a class="btn btn_primary" id="download_button" href="#download">Download</a>
+                    <a class="btn btn_secondary" id="community_button" href="#community">Join our community</a>
+                </div>
+            </div>
+            <div class="about">
+                <div class="glass" style="grid-column: 1 / -1;">
+                    <div class="inner_card">
+                        <h2 class="center_text">About</h2>
+                        <p>Stellar Guesser was developed as a tool for learning the night sky in a game-like manner. The
+                            default question packs provide a learning path from the very basics to knowledge suitable
+                            for contestants aiming to win a gold medal at the IOAA. It is also possible
+                            to create custom question packs for a personalised learning experience. There is a large
+                            selection of question types, which can for example test your knowledge of deep-sky
+                            objects, star designations, constellation borders or focus on skills such as estimating
+                            coordinates, distances between objects, magnitudes of stars or identifying missing stars.
+                        </p>
+                        <p>
+                            Regarding olympiad preparation, the application covers the vast majority of the factual
+                            knowledge required for the practical rounds at the IOAA – sky map, planetarium, and
+                            telescopes. Of course, there is more to those rounds than just knowing a lot of information,
+                            for example being able to point a telescope and some tasks being more focused on
+                            measurements. However, being able to find your way around the night sky is usually crucial,
+                            or at least very helpful.
+                        </p>
+                    </div>
+                </div>
+                <div class="glass">
+                    <div class="inner_card">
+                        <h2 class="center_text" id="download">Download</h2>
+                        <p>You can find the latest release <a href="./latest_release/">here</a>.</p>
+                        <p>The primary platform is Windows - everything should be fully functional there. There are also
+                            releases for Android, which are made to be as functional as possible, with some limitations
+                            and workarounds due to the incompleteness of the integration between Android and the
+                            frameworks used for development. However, 9.5 times out of 10 these issues are purely
+                            visual, not functional (there are workarounds in place for functional issues).</p>
+                        <p>All releases can be found <a href="./latest_release/">here</a>.</p>
+                        <p>Note: Some releases may include multiple versions for the same platform. Please refer to the
+                            notes file in the folder to learn what are the differences between those builds and choose
+                            the version that suits your needs the best.</p>
+                    </div>
+                </div>
+                <div class="glass">
+                    <div class="inner_card">
+                        <h2 class="center_text" id="community">Community</h2>
+                        <p>Join our community to connect with others, get help with the app, and learn about the sky. We
+                            especially welcome your feedback since it helps us refine and
+                            improve the app for everyone. Please report any issues you encounter and feel free to
+                            suggest new features you would like to see.</p>
+                        <h3>
+                            Discord
+                        </h3>
+                        Join our Discord server by following <a href="./discord/">this link</a>.
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>© Stellar Guesser</footer>
+    </div>
+</body>
+
+</html>

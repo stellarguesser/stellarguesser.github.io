@@ -1,0 +1,217 @@
+:root {
+    --p-100: #cbe6ff;
+    --p-70: #00b7fd;
+    --p-40: #00658e;
+    --p-20: #00344c;
+    --p-08: #001a28;
+
+    --s-100: #ffd9e1;
+    --s-70: #ff85a6;
+    --s-40: #bb0057;
+    --s-20: #66002c;
+    --s-08: #380015;
+
+    --text-light: rgb(255, 255, 255);
+
+    --card-bg: rgba(255, 255, 255, 0.06);
+
+    --default-gap: 12px;
+    --default-padding: 12px;
+    --default-card-border-radius: 12px;
+
+    --btn-vpad: 12px;
+    --btn-hpad: 16px;
+    --header-hpad: 20px;
+    --header-inner-height: calc(1em + 2 * var(--btn-vpad));
+}
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+    background: linear-gradient(310deg, var(--s-08), var(--p-08) 80%) no-repeat center center fixed;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0px var(--default-padding) var(--default-padding) var(--default-padding);
+    font-family: Inter, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--p-100);
+    -webkit-font-smoothing: antialiased;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.wrap {
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--default-padding) 0;
+    position: sticky;
+    top: 0;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-weight: 800;
+    display: flex;
+    gap: var(--default-gap);
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.logo img {
+    display: block;
+    width: auto;
+    object-fit: contain;
+    height: var(--header-inner-height);
+    max-height: 100%;
+}
+
+nav a {
+    padding: var(--btn-vpad) var(--btn-hpad);
+    line-height: 1;
+    font-size: inherit;
+}
+
+.glass {
+    background: linear-gradient(180deg, rgba(from var(--p-20) r g b / 0.16), rgba(from var(--p-20) r g b / 0.12));
+    padding: 20px;
+    border-radius: var(--default-card-border-radius);
+    border: 1px solid rgba(from var(--p-20) r g b / 0.06);
+}
+
+header.glass {
+    padding: var(--header-hpad);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background: none;
+}
+
+.btn {
+    padding: var(--btn-vpad) var(--btn-hpad);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+a.btn {
+    text-decoration: none;
+}
+
+a {
+    color: inherit;
+}
+
+.btn_primary {
+    background: var(--p-40);
+    color: var(--p-100);
+}
+
+.btn_secondary {
+    background: var(--s-40);
+    color: var(--s-100);
+}
+
+.center_text {
+    text-align: center;
+}
+
+.action_buttons_wrapper {
+    display: flex;
+    gap: var(--default-gap);
+    align-items: center;
+    justify-content: center;
+}
+
+.main_card {
+    padding: var(--default-padding);
+    min-height: calc(100vh - var(--main-card-h, 0px));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_card_content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_title {
+    width: 70%;
+}
+
+h1.main_title {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: clamp(16px, 8vw, 12vh);
+    margin: 0;
+}
+
+.inner_card {
+    padding: var(--default-padding);
+    border-radius: var(--default-card-border-radius);
+    background-color: var(--card-bg);
+    height: 100%;
+}
+
+footer {
+    text-align: center;
+}
+
+.about {
+    display: grid;
+    gap: var(--default-gap);
+    padding: var(--default-padding) 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width:940px) {
+    .about {
+        grid-template-columns: 1fr
+    }
+}
+
+#background_canvas {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: -10;
+}
+
+.animate_highlight {
+    animation-name: fade_to_light_secondary;
+    animation-duration: 2s;
+}
+
+@keyframes fade_to_light_secondary {
+    0% {
+        color: currentColor;
+    }
+
+    50% {
+        color: var(--s-100);
+    }
+
+    100% {
+        color: currentColor;
+    }
+}
