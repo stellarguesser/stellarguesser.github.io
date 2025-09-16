@@ -1,3 +1,5 @@
+import { get_viewport_heigh_ignoring_keyboard } from "./get_viewport_height.js";
+
 (function () {
     const card = document.querySelector('main > .main_card');
     if (!card) {
@@ -17,6 +19,12 @@
         // window.scrollY ... how much was the page scrolled
         // -> rect.top + window.scrollY is invariant under scrolling
         const card_doc_top = rect.top + window.scrollY;
+
+        // Should take into account the browser UI on mobile
+        const viewport_height = get_viewport_heigh_ignoring_keyboard(window);
+
+        const remaining = Math.max(0, Math.floor(viewport_height - card_doc_top));
+        card.style.minHeight = remaining + 'px';
 
         document.documentElement.style.setProperty('--main-card-top-offset', card_doc_top + 'px');
     }

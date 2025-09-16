@@ -144,6 +144,8 @@ a {
 
 .main_card {
     padding: var(--default-padding);
+    min-height: calc(100lvh - var(--main-card-top-offset, 0px));
+    min-height: calc(100dvh - var(--main-card-top-offset, 0px));
     min-height: calc(100vh - var(--main-card-top-offset, 0px));
     display: flex;
     flex-direction: column;
