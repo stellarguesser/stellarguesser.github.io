@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', (_event) => {
         }
     }
 
-    function drawStars() {
+    function draw_stars() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         for (const star of stars) {
             ctx.fillStyle = "#dddddd90";
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', (_event) => {
     }
 
     load_stars();
-    drawStars();
+    draw_stars();
 
     function debounce(fn, wait_ms = 120) {
         let t;
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', (_event) => {
             star.projected.x = x_p;
             star.projected.y = y_p;
         }
-        drawStars();
+        draw_stars();
     }
 
     window.addEventListener('resize', debounce(() => {
