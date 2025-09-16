@@ -5,7 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Stellar Guesser</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="main.css" />
     <link rel="icon" type="image/x-icon" href="./files/images/favicon.ico">
     <script src="adjust_main_card_height.js" defer></script>
@@ -20,7 +24,7 @@
         <header class="glass">
             <div class="logo">
                 <img src="./files/images/favicon.ico" alt="Stellar Guesser logo">
-                Stellar Guesser
+                <a href=".">Stellar Guesser</a>
             </div>
 
             <nav class="action_buttons_wrapper">
@@ -66,7 +70,8 @@
                 </div>
                 <div class="glass">
                     <div class="inner_card">
-                        <h2 class="center_text" id="download">Download</h2>
+                        <div class="anchor" id="download"></div>
+                        <h2 class="center_text" id="download_heading">Download</h2>
                         <p>You can find the latest release <a href="./latest_release/">here</a>.</p>
                         <p>The primary platform is Windows - everything should be fully functional there. There are also
                             releases for Android, which are made to be as functional as possible, with some limitations
@@ -81,7 +86,8 @@
                 </div>
                 <div class="glass">
                     <div class="inner_card">
-                        <h2 class="center_text" id="community">Community</h2>
+                        <div class="anchor" id="community"></div>
+                        <h2 class="center_text" id="community_heading">Community</h2>
                         <p>Join our community to connect with others, get help with the app, and learn about the sky. We
                             especially welcome your feedback since it helps us refine and
                             improve the app for everyone. Please report any issues you encounter and feel free to

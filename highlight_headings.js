@@ -1,11 +1,11 @@
 const buttons_and_headings = [
     {
         buttons: document.querySelectorAll('#community_button'),
-        headings: document.querySelectorAll('#community')
+        headings: document.querySelectorAll('#community_heading')
     },
     {
         buttons: document.querySelectorAll('#download_button'),
-        headings: document.querySelectorAll('#download')
+        headings: document.querySelectorAll('#download_heading')
     }
 ];
 

@@ -18,7 +18,7 @@
         // -> rect.top + window.scrollY is invariant under scrolling
         const card_doc_top = rect.top + window.scrollY;
 
-        document.documentElement.style.setProperty('--main-card-h', card_doc_top + 'px');
+        document.documentElement.style.setProperty('--main-card-top-offset', card_doc_top + 'px');
     }
 
     const update_debounced = debounce(update_card_min_height, 80);
