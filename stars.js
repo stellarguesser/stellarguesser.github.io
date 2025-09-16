@@ -1,5 +1,6 @@
-function mag_to_radius(mag, fov_deg) {
-    const R_0 = 3.2; // Scales the stars linearly
+function mag_to_radius(mag, fov_deg, window_size) {
+    const R_0_RELATIVE = 1.0 / 150.0; // Scales the stars linearly
+    const R_0 = Math.max(1.0, R_0_RELATIVE * window_size);
     const N = 3.0; // How much should the radius of stars change with FOV; higher values of N cause smaller changes
     const O = 0.17; // How much should the radius change when changing the magnitude
 
@@ -42,7 +43,8 @@ document.addEventListener('DOMContentLoaded', (_event) => {
             const [dec_deg, ra_deg, mag] = star_raw.trim().split(",").map((v) => parseFloat(v));
             const [dec, ra] = [deg_to_rad(dec_deg), deg_to_rad(ra_deg)];
             const [x, y, z] = spherical_to_rectangular(dec, ra);
-            const [x_p, y_p] = project_star([x, y, z], FOV_DEG, get_window_characteristic_dimension(window));
+            const window_size = get_window_characteristic_dimension(window);
+            const [x_p, y_p] = project_star([x, y, z], FOV_DEG, window_size);
             stars.push({
                 spherical: {
                     dec,
@@ -54,7 +56,7 @@ document.addEventListener('DOMContentLoaded', (_event) => {
                 projected: {
                     x: x_p, y: y_p
                 },
-                radius: mag_to_radius(mag, FOV_DEG),
+                radius: mag_to_radius(mag, FOV_DEG, window_size),
                 mag
             });
         }
@@ -82,7 +84,9 @@ document.addEventListener('DOMContentLoaded', (_event) => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         for (const star of stars) {
-            let [x_p, y_p] = project_star([star.rectangular.x, star.rectangular.y, star.rectangular.z], FOV_DEG, get_window_characteristic_dimension(window));
+            const window_size = get_window_characteristic_dimension(window);
+            star.radius = mag_to_radius(star.mag, FOV_DEG, window_size)
+            let [x_p, y_p] = project_star([star.rectangular.x, star.rectangular.y, star.rectangular.z], FOV_DEG, window_size);
             star.projected.x = x_p;
             star.projected.y = y_p;
         }
