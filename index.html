@@ -28,8 +28,14 @@
                 <a href=".">Stellar Guesser</a>
             </div>
 
-            <nav class="action_buttons_wrapper">
+            <nav class="action_buttons_wrapper action_buttons_wrapper_wide">
+                <a class="btn btn_primary" id="play_button" href="#play">Play in browser</a>
                 <a class="btn btn_primary" id="download_button" href="#download">Download</a>
+                <a class="btn btn_secondary" id="community_button" href="#community">Join our community</a>
+                <a class="btn btn_secondary" href="https://github.com/Pandicon/stellar-guesser">Source code</a>
+            </nav>
+            <nav class="action_buttons_wrapper action_buttons_wrapper_narrow">
+                <a class="btn btn_primary" id="play_button" href="#play">Play</a>
                 <a class="btn btn_secondary" id="community_button" href="#community">Join our community</a>
             </nav>
         </header>
@@ -42,8 +48,14 @@
                             href="https://ioaastrophysics.org/">IOAA</a>
                         gold medal level</h2>
                 </div>
-                <div class="action_buttons_wrapper">
+                <div class="action_buttons_wrapper action_buttons_wrapper_wide">
+                    <a class="btn btn_primary" id="play_button" href="#play">Play in browser</a>
                     <a class="btn btn_primary" id="download_button" href="#download">Download</a>
+                    <a class="btn btn_secondary" id="community_button" href="#community">Join our community</a>
+                    <a class="btn btn_secondary" href="https://github.com/Pandicon/stellar-guesser">Source code</a>
+                </div>
+                <div class="action_buttons_wrapper action_buttons_wrapper_narrow">
+                    <a class="btn btn_primary" id="play_button" href="#play">Play</a>
                     <a class="btn btn_secondary" id="community_button" href="#community">Join our community</a>
                 </div>
             </div>
@@ -71,6 +83,20 @@
                 </div>
                 <div class="glass">
                     <div class="inner_card">
+                        <div class="anchor" id="play"></div>
+                        <h2 class="center_text" id="play_heading">Play</h2>
+                        <p>You can launch the application in the browser <a href="./play/">here</a>.</p>
+                        <p>It should be possible to "install" the website as an "app" on both mobile and desktop. It
+                            will still run in a browser, but should not require an internet connection to be loaded.</p>
+                        <p>Please note that web is not the primary platform, so it is recommended to <a
+                                id="download_button" href="#download">download</a> an executable for one of the primary
+                            platforms if possible. Web browsers have some limitations in place over native environments,
+                            so not all features can be present in the web version. However, there should not be any
+                            critical features missing.</p>
+                    </div>
+                </div>
+                <div class="glass">
+                    <div class="inner_card">
                         <div class="anchor" id="download"></div>
                         <h2 class="center_text" id="download_heading">Download</h2>
                         <p>You can find the latest release <a href="./latest_release/">here</a>.</p>
@@ -85,7 +111,7 @@
                             the version that suits your needs the best.</p>
                     </div>
                 </div>
-                <div class="glass">
+                <div class="glass" style="grid-column: 1 / -1;">
                     <div class="inner_card">
                         <div class="anchor" id="community"></div>
                         <h2 class="center_text" id="community_heading">Community</h2>
@@ -96,7 +122,15 @@
                         <h3>
                             Discord
                         </h3>
-                        Join our Discord server by following <a href="./discord/">this link</a>.
+                        Join our <a href="./discord/">Discord server</a> to connect with the community, ask questions,
+                        and discuss the app and astronomy-related topics.
+                        <h3>
+                            GitHub
+                        </h3>
+                        The application is open source and available <a
+                            href="https://github.com/Pandicon/stellar-guesser">on GitHub</a>. Contributions of all kinds
+                        are very welcome, and if you need help getting started, our community spaces are a great place
+                        to ask.
                     </div>
                 </div>
             </div>

@@ -6,6 +6,10 @@ const buttons_and_headings = [
     {
         buttons: document.querySelectorAll('#download_button'),
         headings: document.querySelectorAll('#download_heading')
+    },
+    {
+        buttons: document.querySelectorAll('#play_button'),
+        headings: document.querySelectorAll('#play_heading')
     }
 ];
 
